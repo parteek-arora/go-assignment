@@ -9,13 +9,9 @@ var id int
 
 type StudentDict = student.Student
 
-var studentsArray []StudentDict;
+var studentsArray []StudentDict
 
 func main() {
-	userAction()
-}
-
-func userAction() {
 	var optionSelected int
 	fmt.Println("--------- Please select one option --------------------------")
 	fmt.Println("Press 1 for add new student")
@@ -29,19 +25,18 @@ func userAction() {
 	switch optionSelected {
 	case 1:
 		//increment id and call the fucntion
-		id++;
-		student.AddStudent(&studentsArray , id)
+		id++
+		student.AddStudent(&studentsArray, id)
 	case 2:
-		student.EditStudent(&studentsArray); // edit student details
+		student.EditStudent(&studentsArray) // edit student details
 	case 3:
-		student.DeleteStudent(&studentsArray); //delete student details
+		student.DeleteStudent(&studentsArray) //delete student details
 	case 4:
-		student.ViewStudentById(&studentsArray); //view student details by id
+		student.ViewStudentById(&studentsArray) //view student details by id
 	case 5:
-		student.ViewAllStudents(&studentsArray); //view all sudents
+		student.ViewAllStudents(&studentsArray) //view all sudents
 	default:
 		fmt.Println("Option selected is invalid. Please select again")
 	}
-	//repitative call to the fucntion
-	userAction() // process never get exit
+	main()
 }
