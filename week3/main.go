@@ -6,9 +6,9 @@ import (
 )
 
 var id int
-//intialize structure with students slice and all the methods(like object of class)
-var debutGroup = student.StudentGroup{make([] student.Student , 0)};
 
+//intialize structure with students slice and all the methods(like object of class)
+var debutGroup = student.StudentGroup{make([]student.Student, 0)}
 
 func main() {
 	var optionSelected int
