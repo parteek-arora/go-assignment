@@ -6,9 +6,9 @@ import (
 )
 
 var id int
-//intialize structure with students slice and all the methods(like object of class)
-var debutgroup = student.StudentGroup{make([] student.Student , 0)};
 
+//intialize structure with students slice and all the methods(like object of class)
+var debutGroup = student.StudentGroup{make([]student.Student, 0)}
 
 func main() {
 	var optionSelected int
@@ -26,18 +26,18 @@ func main() {
 	case 1:
 		//increment id and call the fucntion
 		id++
-		debutgroup.AddStudent(id)
+		debutGroup.AddStudent(id)
 	case 2:
-		debutgroup.EditStudent() // edit student details
+		debutGroup.EditStudent() // edit student details
 	case 3:
-		debutgroup.DeleteStudent() //delete student details
+		debutGroup.DeleteStudent() //delete student details
 	case 4:
-		debutgroup.ViewStudentById() //view student details by id
+		debutGroup.ViewStudentById() //view student details by id
 	case 5:
-		debutgroup.ViewAllStudents() //view all sudents
+		debutGroup.ViewAllStudents() //view all sudents
 	case 6:
 		id++
-		debutgroup.AddStudentJSON(id) //add student json string
+		debutGroup.AddStudentJSON(id) //add student json string
 	default:
 		fmt.Println("Option selected is invalid. Please select again")
 	}
