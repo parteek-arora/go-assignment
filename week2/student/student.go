@@ -10,7 +10,10 @@ type Student struct {
 	phone string
 }
 
-//method to add student
+/**
+Add students
+@input students array,id, dynamic input(name and phone)
+*/
 func AddStudent(studentsArray *[]Student, id int) {
 	fmt.Println("********* Add New Student ***********")
 	var name, phone string
@@ -23,7 +26,10 @@ func AddStudent(studentsArray *[]Student, id int) {
 	fmt.Println("********* New Student Added Successfully *********")
 }
 
-//method to edit the sudnt details
+/**
+method to edit the sudnt details
+@input students array , dynamic input(name , phone and id)
+*/
 func EditStudent(studentsArray *[]Student) {
 	fmt.Println("********* Edit Student's detail ***********")
 	var id, index int
@@ -49,7 +55,10 @@ func EditStudent(studentsArray *[]Student) {
 	}
 }
 
-//method to delete the student by id
+/**
+method to delete the student by id
+@input students array , dynamic input(id)
+*/
 func DeleteStudent(studentsArray *[]Student) {
 	fmt.Println("********* Delete Student By Id ***********")
 	var id, index int
@@ -71,7 +80,10 @@ func DeleteStudent(studentsArray *[]Student) {
 	}
 }
 
-//view student detail by ID
+/**
+view student detail by
+@input students array , dynamic input(id)
+*/
 func ViewStudentById(studentsArray *[]Student) {
 	fmt.Println("********* View Student By Id ***********")
 	var id, index int
@@ -91,7 +103,10 @@ func ViewStudentById(studentsArray *[]Student) {
 	}
 }
 
-//view all students details
+/**
+view all students details
+@input students array
+*/
 func ViewAllStudents(studentsArray *[]Student) {
 	fmt.Println("********* List of all students ***********")
 	fmt.Println("Total number of students :- ", len(*studentsArray))

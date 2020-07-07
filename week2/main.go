@@ -1,8 +1,8 @@
 package main
 
 import (
+	"assignment/week2/student"
 	"fmt"
-	"student"
 )
 
 var id int
