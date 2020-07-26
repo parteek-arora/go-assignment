@@ -1,22 +1,27 @@
 package main
 
 import (
+	studentChaincode "assignment/chaincode/student/chaincode"
+	studentRouter "assignment/chaincode/student/router"
 	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
-	studentRouter "student/router"
+	"testing"
 
 	"github.com/gorilla/mux"
+	"github.com/hyperledger/fabric/core/chaincode/shim"
 )
 
 var httpPort int = 3000 //port to intialize the server
 
-func main() {
+//main test fucntion to run
+func TestMain(test *testing.T) {
 	router := mux.NewRouter()
-
+	//intialize the chaincode
+	stub := InitChaincode(test)
 	//add all the routes of a student
-	studentRouter.AddStudentRoutes(router)
+	studentRouter.AddStudentRoutes(router, test, stub)
 
 	//customize the 404 handler to send json
 	router.NotFoundHandler = http.HandlerFunc(notFound)
@@ -26,6 +31,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+}
+
+func InitChaincode(test *testing.T) *shim.MockStub {
+	//chaincode intilization of student chaincode
+	stub := shim.NewMockStub("MockStub", new(studentChaincode.StudentChaincode))
+	if stub == nil {
+		test.Fatalf("MockStub creation failed")
+	}
+	return stub
 }
 
 /**
